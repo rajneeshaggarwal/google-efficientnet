@@ -41,3 +41,11 @@ We have provided a list of EfficientNet checkpoints for [EfficientNet-B0](https:
     $ tar zxf ${MODEL}.tar.gz
     $ python eval_ckpt_main.py --model_name=$MODEL --ckpt_dir=$MODEL --example_img=panda.jpg --labels_map_file=labels_map.txt
 
+## Output
+<table border="0">
+<tr>
+    <td>
+    <img src="./output.png" width="100%" />
+    </td>
+</tr>
+</table>
