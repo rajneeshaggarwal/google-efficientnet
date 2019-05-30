@@ -1,6 +1,8 @@
+Copied the content from here: https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet
+
 # EfficientNets to run on GPU
 
-[1] Mingxing Tan and Quoc V. Le.  EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks. ICML 2019.
+[1] ICML 2019 paper, “EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks
    Arxiv link: https://arxiv.org/abs/1905.11946.
 
 
