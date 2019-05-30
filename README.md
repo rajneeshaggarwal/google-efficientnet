@@ -1,4 +1,4 @@
-# EfficientNets
+# EfficientNets to run on GPU
 
 [1] Mingxing Tan and Quoc V. Le.  EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks. ICML 2019.
    Arxiv link: https://arxiv.org/abs/1905.11946.
@@ -37,33 +37,5 @@ We have provided a list of EfficientNet checkpoints for [EfficientNet-B0](https:
     $ export MODEL=efficientnet-b0
     $ wget https://storage.googleapis.com/cloud-tpu-checkpoints/efficientnet/${MODEL}.tar.gz
     $ tar zxf ${MODEL}.tar.gz
-    $ wget https://upload.wikimedia.org/wikipedia/commons/f/fe/Giant_Panda_in_Beijing_Zoo_1.JPG -O panda.jpg
-    $ wget https://storage.googleapis.com/cloud-tpu-checkpoints/efficientnet/eval_data/labels_map.txt
     $ python eval_ckpt_main.py --model_name=$MODEL --ckpt_dir=$MODEL --example_img=panda.jpg --labels_map_file=labels_map.txt
 
-Please refer to the following colab for more instructions on how to obtain and use those checkpoints.
-
-  * [`eval_ckpt_example.ipynb`](eval_ckpt_example.ipynb): A colab example to load
- EfficientNet pretrained checkpoints files and use the restored model to classify images.
-
-
-## 3. Training EfficientNets on TPUs.
-
-
-To train this model on Cloud TPU, you will need:
-
-   * A GCE VM instance with an associated Cloud TPU resource
-   * A GCS bucket to store your training checkpoints (the "model directory")
-   * Install TensorFlow version >= 1.13 for both GCE VM and Cloud.
-
-Then train the model:
-
-    $ export PYTHONPATH="$PYTHONPATH:/path/to/models"
-    $ python main.py --tpu=TPU_NAME --data_dir=DATA_DIR --model_dir=MODEL_DIR
-
-    # TPU_NAME is the name of the TPU node, the same name that appears when you run gcloud compute tpus list, or ctpu ls.
-    # MODEL_DIR is a GCS location (a URL starting with gs:// where both the GCE VM and the associated Cloud TPU have write access
-    # DATA_DIR is a GCS location to which both the GCE VM and associated Cloud TPU have read access.
-
-
-For more instructions, please refer to our tutorial: https://cloud.google.com/tpu/docs/tutorials/efficientnet
